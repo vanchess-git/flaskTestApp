@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TranslatorEnFi</title>
+    <link rel="stylesheet"  type="text/css" href="{{ url_for('static', filename='index.css') }}">
+
+</head>
+<body>
+    <div id="page_container">
+        <h1>Text Translation</h1>
+
+        <form method="POST" action="/" >
+            <div id="input_form">
+                <label for="text_field">Enter Text (English):</label>
+                <textarea type="text" id="text_field" name="text_field" required></textarea>
+                <button type="submit">Translate</button>
+            </div>
+        </form>
+
+        {% if translated_text %}
+        <h2>Translated Text (Finnish):</h2>
+        <p>{{ translated_text }}</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>
